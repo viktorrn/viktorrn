@@ -18,8 +18,8 @@ Here are some ideas to get you started:
 
   Lastly a poem from Big C
 
-  Oh JavaScript, you wily beast,
-  With syntax quirks that never cease.
-  Your code, like pasta, twists and turns,
+  Oh JavaScript, you wily beast, <br>
+  With syntax quirks that never cease. <br>
+  Your code, like pasta, twists and turns, <br>
   In spaghetti strands where logic burns.
 
