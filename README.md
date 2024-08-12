@@ -14,7 +14,7 @@ Here are some ideas to get you started:
 
 - 🔭 I’m currently working on a javascript compiler for running nuclear reactors
 - 🤔 I’m looking for help with automating life
-- 📫 How to reach me: you probably dont
+- 📫 How to reach me: maybe linked in or discord
 
   Lastly a poem from Big C
 
