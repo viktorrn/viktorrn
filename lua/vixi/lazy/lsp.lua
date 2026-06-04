@@ -13,9 +13,8 @@ return {
         ensure_installed = servers,
         automatic_installation = true,
       })
-      local lspconfig = require("lspconfig")
       for _, server in ipairs(servers) do
-        lspconfig[server].setup({})
+        vim.lsp.enable(server)
       end
     end,
   },
