@@ -60,6 +60,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+
 -- USER COMMANDS: DEFINE CUSTOM COMMANDS
 --
 -- See `:h nvim_create_user_command()` and `:h user-commands`

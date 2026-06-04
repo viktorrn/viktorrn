@@ -11,7 +11,16 @@ vim.keymap.set({ 't', 'i' }, '<A-j>', '<C-\\><C-n><C-w>j')
 vim.keymap.set({ 't', 'i' }, '<A-k>', '<C-\\><C-n><C-w>k')
 vim.keymap.set({ 't', 'i' }, '<A-l>', '<C-\\><C-n><C-w>l')
 vim.keymap.set({ 'n' }, '<A-h>', '<C-w>h')
-vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j')
-vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k')
+--vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j')
+--vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k')
 vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
+-- Move line
+
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
+
+-- Add new files
+vim.keymap.set('n', '<leader>nf', function()
+  vim.api.nvim_input(':e ' .. vim.fn.expand('%:p:h') .. "/")
+end, {desc = "New file in current directory"})
 
