@@ -4,15 +4,25 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-buffer"
     },
     config = function()
       require("mason").setup()
-      local servers = { "lua_ls", "ts_ls"}
+      local servers = { "lua_ls", "ts_ls", "pyright"}
       local lsp_conf = require("mason-lspconfig")
       lsp_conf.setup({
         ensure_installed = servers,
         automatic_installation = true,
       })
+
+      vim.lsp.config('*', {
+        capabilities =  require("cmp_nvim_lsp").default_capabilities(),
+      })
+
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition,  { desc = "Goto Definition" })
+      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" })
+      vim.keymap.set("n", "gr", vim.lsp.buf.references,  { desc = "Goto References" })
+
       for _, server in ipairs(servers) do
         vim.lsp.enable(server)
       end

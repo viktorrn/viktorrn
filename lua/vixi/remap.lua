@@ -19,8 +19,24 @@ vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
 
--- Add new files
-vim.keymap.set('n', '<leader>nf', function()
-  vim.api.nvim_input(':e ' .. vim.fn.expand('%:p:h') .. "/")
-end, {desc = "New file in current directory"})
+vim.keymap.set('n' ,'<leader>e', vim.diagnostic.open_float, { desc = "Show diagnostic" })
+vim.keymap.set('n' ,'[d', vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
+vim.keymap.set('n' ,']d', vim.diagnostic.goto_prev, { desc = "Next diagnostic" })
+vim.keymap.set('n' ,'<leader>q', vim.diagnostic.setloclist, { desc = "Diagnostic" })
+
+
+
+vim.keymap.set('n', '<leader>et', function ()
+  local new_value = not vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({ virtual_text = new_value})
+  vim.notify("Virtual text: " .. (new_value and "on" or "off"))
+  --if vim.diagnostic.is_enabled() then
+  --  vim.diagnostic.enable(false)
+  --  vim.notify("Diagnostic: off")
+  --else
+  --  vim.diagnostic.enable(true)
+  --  vim.notify("Diagnostic: on")
+  -- end
+end, { desc = "Toggle diagnostic" })
+
 

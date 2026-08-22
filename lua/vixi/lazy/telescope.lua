@@ -1,7 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
 
-  tag = "0.1.5",
+--  tag = "0.1.5",
 
   dependencies = {
     "nvim-lua/plenary.nvim"
@@ -14,7 +14,7 @@ return {
         layout_config = {
           preview_width = 0.6
         },
-        file_ignore_patterns = { "%.git/", "node_modules", ".venv", "venv" }
+        file_ignore_patterns = { "%.git/", "node_modules", ".venv", "venv", "__pycache__" }
       }
     })
 
@@ -50,5 +50,6 @@ return {
           builtin.find_files {cwd = vim.fn.stdpath('config')}
         end, {desc = "Open configuration folder"})
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Telescope live Grep (find in files) "})
       end
     }
