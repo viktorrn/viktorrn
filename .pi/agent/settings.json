@@ -1,0 +1,11 @@
+{
+  "lastChangelogVersion": "0.84.2",
+  "theme": "dark",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-luna",
+  "defaultThinkingLevel": "medium",
+  "shellPath": "C:/Program Files/Git/bin/bash.exe",
+  "packages": [
+    "npm:whatsapp-pi"
+  ]
+}
